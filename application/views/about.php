@@ -14,9 +14,9 @@
         <a class="navbar-brand" href="#">FERI</a>
       </div>
       <ul class="nav navbar-nav">
-    <li class="active"><a href="<?php echo site_url() ?>home">Home</a></li>
+        <li class="active"><a href="<?php echo site_url() ?>home">Home</a></li>
         <li><a href="<?php echo site_url() ?>about">About</a></li>
-        <li><a href="<?php echo site_url() ?>contact">Contact</a></li> 
+        <li><a href="<?php echo site_url() ?>blog">Blog</a></li>
         
       </ul>
      
