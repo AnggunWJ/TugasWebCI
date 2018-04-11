@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>TUGAS2 CI</title>
+  <title>TUGAS CI</title>
   <link rel="stylesheet" media="all"  type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
 <link rel="stylesheet" media="all"  type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap.css">
 <link rel="stylesheet" media="all"  type="text/css" href="<?php echo base_url() ?>assets/css/bootstrap-theme.css">
@@ -15,13 +15,17 @@
       </div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?php echo site_url() ?>home">Home</a></li>
-        <li><a href="<?php echo site_url() ?>about">About</a></li>
         <li><a href="<?php echo site_url() ?>blog">Blog</a></li>
+        <li><a href="<?php echo site_url() ?>crud">Crud</a></li>
         
       </ul>
      
     </div>
   </nav>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline my-2 my-sm-0" type="submit">Search</button>
+            </form>
   <h1>Juventus Sekarang Kembali Fokus ke Serie A</h1> 
   <h4>Bola.net - Giorgio Chiellini menyatakan bahwa Juventus kembali fokus ke Serie A setelah tengah pekan kemarin bermain di Liga Champions. Ia memastikan timnya ingin merebut posisi pertama klasemen yang saat ini diduduki Napoli.
 

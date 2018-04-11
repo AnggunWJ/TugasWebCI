@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Crud extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -18,11 +18,22 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	function __construct(){
+		parent::__construct();
+		$this->load->model('m_data_crud');
+	}
+
 	public function index()
 	{
-		
+		$data1['query'] = $this->m_data_crud->Get_crud();
 		$this->load->view('header');
-		$this->load->view('about');
+		$this->load->view('main_crud', $data1);
+	}
+
+	public function tambah()
+	{
+		$this->load->view('header');
+		$this->load->view('main_tambah_artikel', $data1);
 	}
 
 }
