@@ -1,6 +1,6 @@
 <?php 
 
-class Artikel extends CI_Model{
+class M_data_artikel extends CI_Model{
 
 	function Get_artikel(){
 		$query = $this->db->query('select * from artikel');

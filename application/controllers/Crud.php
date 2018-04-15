@@ -25,15 +25,48 @@ class Crud extends CI_Controller {
 
 	public function index()
 	{
-		$data1['query'] = $this->m_data_crud->Get_crud();
+		$data1['query'] = $this->m_data_crud->getData();
 		$this->load->view('header');
 		$this->load->view('main_crud', $data1);
 	}
 
 	public function tambah()
 	{
+		$this->form_validation->set_rules('judul','title', 'trim|required');
+		$this->form_validation->set_rules('konten','konten', 'trim|required');
+		$this->form_validation->set_rules('tanggal','tanggal', 'trim|required');
+		if($this->form_validation->run()==False){
 		$this->load->view('header');
-		$this->load->view('main_tambah_artikel', $data1);
+		$this->load->view('tambah_data');
+		}else{
+			$upload = $this->m_data_crud->upload();
+			if($upload['result'] == "success"){
+				$this->m_data_crud->simpandData($upload);
+				redirect('/crud','refresh');
+			}
+	}
 	}
 
+	public function hapus($id){
+		$this->m_data_crud->deleteData($id);
+		redirect('/crud','refresh');
+	}
+
+	public function edit($id){
+		$data['detail'] = $this->m_data_crud->getDatadetail($id);
+		$this->load->view('header');
+		$this->load->view('edit_data',$data);
+		if(isset($_POST['simpan'])){
+			if($this->input->post('ganti')=="y"){
+				$upload = $this->m_data_crud->upload();
+			if($upload['result'] == "success"){
+				$this->m_data_crud->updateData($id,$upload);
+				redirect('/crud','refresh');
+			}
+			}else{
+				$this->m_data_crud->updateDataOnly($id);
+				redirect('/crud','refresh');
+			}
+		}
+	}
 }

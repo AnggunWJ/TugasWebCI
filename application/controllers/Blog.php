@@ -5,20 +5,20 @@ class Blog extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('m_data_artikel');
+		$this->load->model('m_data_crud');
 	}
 
 	public function index()
 	{
-		$data1['query'] = $this->m_data_artikel->Get_artikel();
+		$data1['query'] = $this->m_data_crud->getData();
 		$this->load->view('header');
-		$this->load->view('main_blog', $data1);
+		$this->load->view('blog', $data1);
 	}
 
 	public function detail(){
-		$data['data'] = $this->m_data_artikel->Get_single($this->uri->segment(3));
+		$data1['query'] = $this->m_data_crud->getData();
 		$this->load->view('header');
-		$this->load->view('detail',$data);
+		$this->load->view('blog', $data1);
 	}
 }
 
