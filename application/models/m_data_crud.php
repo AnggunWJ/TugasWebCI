@@ -31,6 +31,9 @@ class M_data_crud extends CI_Model{
       'title'=>$this->input->post('judul'),
       'content_artikel'=>$this->input->post('konten'),
       'tgl_posting'=>$this->input->post('tanggal'),
+      'Sumber_artikel'=>$this->input->post('sumber'),
+      'Jenis_Artikel'=>$this->input->post('jenis'),
+      'Pengarang_Artikel'=>$this->input->post('pengarang'),
       'images' => $upload['file']['file_name']
     );
     
@@ -53,6 +56,9 @@ class M_data_crud extends CI_Model{
       'title'=>$this->input->post('judul'),
       'content_artikel'=>$this->input->post('konten'),
       'tgl_posting'=>$this->input->post('tanggal'),
+      'Sumber_artikel'=>$this->input->post('sumber'),
+      'Jenis_Artikel'=>$this->input->post('jenis'),
+      'Pengarang_Artikel'=>$this->input->post('pengarang'),
       'images' => $upload['file']['file_name']
     );
     
@@ -64,7 +70,11 @@ class M_data_crud extends CI_Model{
      $data = array(
       'title'=>$this->input->post('judul'),
       'content_artikel'=>$this->input->post('konten'),
-      'tgl_posting'=>$this->input->post('tanggal')
+      'tgl_posting'=>$this->input->post('tanggal'),
+      'Sumber_artikel'=>$this->input->post('sumber'),
+      'Jenis_Artikel'=>$this->input->post('jenis'),
+      'Pengarang_Artikel'=>$this->input->post('pengarang'),
+      'images' => $upload['file']['file_name']
     );
     
     $this->db->update('blog', $data);

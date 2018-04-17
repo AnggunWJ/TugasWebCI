@@ -35,6 +35,9 @@ class Crud extends CI_Controller {
 		$this->form_validation->set_rules('judul','title', 'trim|required');
 		$this->form_validation->set_rules('konten','konten', 'trim|required');
 		$this->form_validation->set_rules('tanggal','tanggal', 'trim|required');
+		$this->form_validation->set_rules('jenis','Jenis', 'trim|required');
+		$this->form_validation->set_rules('sumber','Sumber', 'trim|required');
+		$this->form_validation->set_rules('pengarang','Pengarang', 'trim|required');
 		if($this->form_validation->run()==False){
 		$this->load->view('header');
 		$this->load->view('tambah_data');

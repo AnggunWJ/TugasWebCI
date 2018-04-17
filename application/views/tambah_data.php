@@ -21,6 +21,13 @@
 	 	<input type="text" placeholder="yyyy-mm-dd" id="tanggal" name="tanggal" class="form-control">
 	 	<label for="gambar">Gambar </label>
 		<input type="file" name="input_gambar" class="form-control">
+		<label for="Sumber">Sumber</label>
+	 	<input type="text" id="sumber" name="sumber" class="form-control" placeholder="Masukkan Sumber">
+	 	<label for="Jenis">Jenis</label>
+	 	<input type="text" id="jenis" name="jenis" class="form-control" placeholder="Masukkan Jenis">
+	 	<label for="Pengarang">Pengarang</label>
+	 	<input type="text" id="pengarang" name="pengarang" class="form-control" placeholder="Masukkan Pengarang">
+
 	 </div>
 	 <button type="submit" class="btn btn-primary">SIMPAN</button>
 	 </form></div>

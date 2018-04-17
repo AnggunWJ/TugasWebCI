@@ -22,6 +22,12 @@
     <input type="text" placeholder="yyyy-mm-dd" value="<?php echo $row->tgl_posting; ?>" id="tanggal" name="tanggal" class="form-control">
     <label for="gambar">Gambar </label>
     <input type="file" name="input_gambar" class="form-control"><input type="checkbox" name="ganti" value="y"> Ganti Gambar
+    <label for="Sumber">Sumber</label>
+    <input type="text" id="sumber" name="sumber" class="form-control" value="<?php echo $row->Sumber_artikel; ?>" placeholder="Masukkan Sumber">
+    <label for="Jenis">Jenis</label>
+    <input type="text" id="jenis" name="jenis" class="form-control" value="<?php echo $row->Jenis_Artikel; ?>" placeholder="Masukkan Jenis">
+    <label for="Pengarang">Pengarang</label>
+    <input type="text" id="pengarang" name="pengarang" class="form-control" value="<?php echo $row->Pengarang_Artikel; ?>" placeholder="Masukkan Pengarang">
    </div>
    <?php } ?>
    <button type="submit" name="simpan" class="btn btn-primary">SIMPAN</button>

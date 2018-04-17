@@ -13,6 +13,9 @@
         <th class="col-md-0">isi</th>
         <th class="col-md-0">Gambar</th>
         <th class="col-md-0">Tanggal</th>
+        <th class="col-md-0">Sumber</th>
+        <th class="col-md-0">Jenis</th>
+        <th class="col-md-0">Pengarang</th>
         <th class="col-md-0">Pilihan</th>
       </tr>
       <?php 
@@ -25,6 +28,9 @@
           <td><?php echo substr($b->content_artikel, 0, 20) . '...'; ?></td>
           <td><img style='width:100px;height:150px' src="<?php echo base_url().'assets/image/'?><?php echo $b->images; ?>"></td>
           <td><?php echo $b->tgl_posting; ?></td>
+          <td><?php echo $b->Sumber_artikel; ?></td>
+          <td><?php echo $b->Jenis_Artikel; ?></td>
+          <td><?php echo $b->Pengarang_Artikel; ?></td>
           <td>
             
             <a href="<?php echo site_url(); ?>crud/edit/<?php echo $b->id_blog;  ?>" class="btn btn-primary">
