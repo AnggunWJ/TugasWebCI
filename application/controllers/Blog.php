@@ -10,7 +10,7 @@ class Blog extends CI_Controller {
 
 	public function index()
 	{
-		$data1['query'] = $this->m_data_crud->getData();
+		$data1['query'] = $this->m_data_crud->getDataJoin();
 		$this->load->view('header');
 		$this->load->view('blog', $data1);
 	}

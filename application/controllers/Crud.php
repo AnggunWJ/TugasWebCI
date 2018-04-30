@@ -39,8 +39,9 @@ class Crud extends CI_Controller {
 		$this->form_validation->set_rules('sumber','Sumber', 'trim|required');
 		$this->form_validation->set_rules('pengarang','Pengarang', 'trim|required');
 		if($this->form_validation->run()==False){
+			$data['kategori']  = $this->m_data_crud->getKategori();
 		$this->load->view('header');
-		$this->load->view('tambah_data');
+		$this->load->view('tambah_data',$data);
 		}else{
 			$upload = $this->m_data_crud->upload();
 			if($upload['result'] == "success"){
@@ -57,6 +58,7 @@ class Crud extends CI_Controller {
 
 	public function edit($id){
 		$data['detail'] = $this->m_data_crud->getDatadetail($id);
+		$data['kategori']  = $this->m_data_crud->getKategori();
 		$this->load->view('header');
 		$this->load->view('edit_data',$data);
 		if(isset($_POST['simpan'])){

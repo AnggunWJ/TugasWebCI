@@ -17,7 +17,7 @@
         <li class="active"><a href="<?php echo site_url() ?>home">Home</a></li>
         <li><a href="<?php echo site_url() ?>blog">Blog</a></li>
         <li><a href="<?php echo site_url() ?>crud">Crud</a></li>
-        
+         <li><a href="<?php echo site_url() ?>kategori">Kategori</a></li>
       </ul>
      
     </div>

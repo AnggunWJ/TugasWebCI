@@ -11,6 +11,7 @@
         <th class="col-md-0">Nomor</th>
         <th class="col-md-0">Judul</th>
         <th class="col-md-0">isi</th>
+        <th class="col-md-0">Kategori</th>
       </tr>
       <?php 
         $no=1;
@@ -20,7 +21,7 @@
           <td><?php echo $no++ ?></td>
           <td><?php echo $b->title; ?></td>
           <td><?php echo $b->content_artikel ?></td>
-          
+           <td><?php echo $b->kategori ?></td>
         </tr>   
         <?php 
       }

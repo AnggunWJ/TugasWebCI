@@ -6,6 +6,10 @@ class M_data_crud extends CI_Model{
 		$query = $this->db->query('select * from blog');
 		return $query->result();
 	}
+  function getDataJoin(){
+    $query = $this->db->query('select b.title,b.content_artikel,k.kategori from blog as b left outer join kategori as k on b.id_kategori = k.id_kategori');
+    return $query->result();
+  }
 
 	 public function upload(){
     $config['upload_path'] = './assets/image/';
@@ -33,6 +37,7 @@ class M_data_crud extends CI_Model{
       'tgl_posting'=>$this->input->post('tanggal'),
       'Sumber_artikel'=>$this->input->post('sumber'),
       'Jenis_Artikel'=>$this->input->post('jenis'),
+        'id_kategori'=>$this->input->post('kategori'),
       'Pengarang_Artikel'=>$this->input->post('pengarang'),
       'images' => $upload['file']['file_name']
     );
@@ -41,8 +46,13 @@ class M_data_crud extends CI_Model{
   }
 
   public function getDatadetail($id){
+
   		$this->db->where('id_blog',$id);
   	return	$this->db->get_where('blog');
+  }
+
+  public function getKategori(){
+   return $this->db->get("kategori");
   }
 
   public function deleteData($id){
@@ -59,6 +69,7 @@ class M_data_crud extends CI_Model{
       'Sumber_artikel'=>$this->input->post('sumber'),
       'Jenis_Artikel'=>$this->input->post('jenis'),
       'Pengarang_Artikel'=>$this->input->post('pengarang'),
+        'id_kategori'=>$this->input->post('kategori'),
       'images' => $upload['file']['file_name']
     );
     
@@ -73,6 +84,7 @@ class M_data_crud extends CI_Model{
       'tgl_posting'=>$this->input->post('tanggal'),
       'Sumber_artikel'=>$this->input->post('sumber'),
       'Jenis_Artikel'=>$this->input->post('jenis'),
+      'id_kategori'=>$this->input->post('kategori'),
       'Pengarang_Artikel'=>$this->input->post('pengarang'),
       'images' => $upload['file']['file_name']
     );

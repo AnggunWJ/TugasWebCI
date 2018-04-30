@@ -28,6 +28,13 @@
     <input type="text" id="jenis" name="jenis" class="form-control" value="<?php echo $row->Jenis_Artikel; ?>" placeholder="Masukkan Jenis">
     <label for="Pengarang">Pengarang</label>
     <input type="text" id="pengarang" name="pengarang" class="form-control" value="<?php echo $row->Pengarang_Artikel; ?>" placeholder="Masukkan Pengarang">
+    <label for="Kategori">Kategori</label>
+    <select class="form-control" name="kategori">
+                <option  value="">---Select Category---</option>                    
+            <?php foreach($kategori->result() as $row) { ?>
+                <option value="<?php echo $row->id_kategori;?>"><?php echo $row->kategori;?></option>
+            <?php } ?>
+        </select>    
    </div>
    <?php } ?>
    <button type="submit" name="simpan" class="btn btn-primary">SIMPAN</button>

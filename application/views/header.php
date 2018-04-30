@@ -17,14 +17,12 @@
         <li class="active"><a href="<?php echo site_url() ?>home">Home</a></li>
         <li><a href="<?php echo site_url() ?>blog">Blog</a></li>
         <li><a href="<?php echo site_url() ?>crud">Crud</a></li>
+           <li><a href="<?php echo site_url() ?>kategori">Kategori</a></li>
         
       </ul>
      
     </div>
   </nav>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline my-2 my-sm-0" type="submit">Search</button>
-            </form>
+            
 			</div>
 		</nav>
