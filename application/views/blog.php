@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>assets/dt/datatables.min.css"/>
+
 <div class="container">
     <div class="col-md-12">
     <h3><span class="fa fa-plus"></span>  Data Artikel</h3>          
@@ -24,9 +26,33 @@
            <td><?php echo $b->kategori ?></td>
         </tr>   
         <?php 
+        echo $this->pagination->create_links();
       }
       ?>
     </table>
   </div>
+      <!-- DataTables -->
+    <script type="text/javascript" src="<?php echo base_url() ?>assets/dt/datatables.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $.toast({
+            heading: 'Welcome to Pixel admin',
+            text: 'Use the predefined ones, or specify a custom position object.',
+            position: 'top-right',
+            loaderBg: '#ff6849',
+            icon: 'info',
+            hideAfter: 3500,
+            stack: 6
+        })
+    });
+    </script>
+    <script type="text/javascript">
+        $(document).ready( function () {
+                $('#myTable').DataTable({
+                    "bInfo" : false
+                });
+            } );
+    </script>
+
 	</body>
 </html>

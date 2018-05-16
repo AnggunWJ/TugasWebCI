@@ -3,7 +3,11 @@
 class M_data_crud extends CI_Model{
 
 	function getData(){
-		$query = $this->db->query('select * from blog');
+		$query = $this->db->query('select * from blog',  $config['per_page'], $this->uri->segment(3)););
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $value) {
+                $data[]=$value;
+            }
 		return $query->result();
 	}
   function getDataJoin(){
