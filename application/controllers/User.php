@@ -1,7 +1,31 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class User extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+		if($this->session->userdata('masuk')){
+			$sessData = $this->session->userdata('masuk');
+			$data['username'] = $sessData['username'];
+			$data['level'] = $sessData['level'];
+			$current_controller = $this->router->fetch_class();
+			$this->load->library('acl');
+			if(!$this->acl->is_public($current_controller))
+			 {
+			 	if(!$this->acl->is_allowed($current_controller, $data['level']))
+			 	{
+			 		redirect('welcome','refresh');
+			 	}
+			 }
+
+		}else{
+			redirect('login','refresh');
+		}
+
+		$this->load->view('user_view',$data);
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -18,35 +42,8 @@ class Home extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-
-	public function __construct()
-	{
-		parent::__construct();
-		if($this->session->userdata('masuk')){
-			$sessData = $this->session->userdata('masuk');
-			$data['username'] = $sessData['username'];
-			$data['level'] = $sessData['level'];
-			$current_controller = $this->router->fetch_class();
-			$this->load->library('acl');
-			if(!$this->acl->is_public($current_controller))
-			 {
-			 	if(!$this->acl->is_allowed($current_controller, $data['level']))
-			 	{
-			 		redirect('login/logout','refresh');
-			 	}
-			 }
-
-		}else{
-			redirect('login','refresh');
-		}
-
-		$this->load->view('home',$data);
-	}
-
-
 	public function index()
 	{
 		
 	}
-
 }

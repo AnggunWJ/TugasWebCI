@@ -26,6 +26,7 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline my-2 my-sm-0" type="submit">Search</button>
             </form>
+            <h5>Welcome  <?php echo $username; ?> To CI sebagai <?php echo $level; ?>  <a href="login/logout" class="btn btn-primary" >Log Out</a></h5>
   <h1>Juventus Sekarang Kembali Fokus ke Serie A</h1> 
   <h4>Bola.net - Giorgio Chiellini menyatakan bahwa Juventus kembali fokus ke Serie A setelah tengah pekan kemarin bermain di Liga Champions. Ia memastikan timnya ingin merebut posisi pertama klasemen yang saat ini diduduki Napoli.
 

@@ -47,7 +47,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	#body {
 		margin: 0 15px 0 15px;
-		background-color: yellow;
 	}
 
 	p.footer {
@@ -69,18 +68,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
+	<h1>Welcome  <?php echo $username; ?> To CI sebagai <?php echo $level; ?>  <a href="login/logout" class="btn btn-primary" >Log Out</a></h1>
 
 	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+		<a href="pegawai" class="btn btn-primary" >PEGAWAI</a></h1>
+		<a href="user" class="btn btn-primary" >USER</a></h1>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>

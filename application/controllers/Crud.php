@@ -21,6 +21,23 @@ class Crud extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 		$this->load->model('m_data_crud');
+		if($this->session->userdata('masuk')){
+			$sessData = $this->session->userdata('masuk');
+			$data['username'] = $sessData['username'];
+			$data['level'] = $sessData['level'];
+			$current_controller = $this->router->fetch_class();
+			$this->load->library('acl');
+			if(!$this->acl->is_public($current_controller))
+			 {
+			 	if(!$this->acl->is_allowed($current_controller, $data['level']))
+			 	{
+			 		redirect('login/logout','refresh');
+			 	}
+			 }
+
+		}else{
+			redirect('login','refresh');
+		}
 	}
 
 	public function index()

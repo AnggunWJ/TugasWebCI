@@ -26,3 +26,4 @@
             
 			</div>
 		</nav>
+    <h5>Welcome  <?php echo $username; ?> To CI sebagai <?php echo $level; ?>  <a href="login/logout" class="btn btn-primary" >Log Out</a></h5>
