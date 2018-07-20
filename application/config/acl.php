@@ -64,7 +64,7 @@ $acl = array(
 		'user' => true,
 		'admin' => true,
 	),
-	'pegawai' => array(
+	'member' => array(
 		'user' => false,
 		'admin' => true,
 	),
@@ -77,10 +77,14 @@ $acl = array(
 		'admin' => true,
 	),
 	'crud' => array(
-		'user' => true,
+		'user' => false,
 		'admin' => true,
 	),
 	'blog' => array(
+		'user' => true,
+		'admin' => true,
+	),
+	'kategori' => array(
 		'user' => true,
 		'admin' => true,
 	),

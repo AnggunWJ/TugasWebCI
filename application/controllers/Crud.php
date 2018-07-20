@@ -38,13 +38,14 @@ class Crud extends CI_Controller {
 		}else{
 			redirect('login','refresh');
 		}
+		$data1['query'] = $this->m_data_crud->getData();
+		$this->load->view('header');
+		$this->load->view('main_crud', $data1);
 	}
 
 	public function index()
 	{
-		$data1['query'] = $this->m_data_crud->getData();
-		$this->load->view('header');
-		$this->load->view('main_crud', $data1);
+		
 	}
 
 	public function tambah()

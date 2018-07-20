@@ -18,7 +18,7 @@
         <li><a href="<?php echo site_url() ?>blog">Blog</a></li>
         <li><a href="<?php echo site_url() ?>crud">Crud</a></li>
            <li><a href="<?php echo site_url() ?>kategori">Kategori</a></li>
-        
+        <li><a href="<?php echo site_url() ?>member">Member</a></li>
       </ul>
      
     </div>
@@ -26,4 +26,3 @@
             
 			</div>
 		</nav>
-    <h5>Welcome  <?php echo $username; ?> To CI sebagai <?php echo $level; ?>  <a href="login/logout" class="btn btn-primary" >Log Out</a></h5>
